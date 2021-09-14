@@ -9,13 +9,24 @@ import os
 
 script_path = os.path.dirname(os.path.realpath(__file__))
 
+with open(script_path + '\datas.txt') as f:
+    lines = f.read().splitlines() 
+print(lines)
+
+if len(lines) == 4:
+    ligue_data = lines[1].split('ligue_name : ')[1]
+    player_token = lines[2].split('token : ')[1]
+
+print(ligue_data)
+print(player_token)
+
 league='1'
 # String_url = "https://api.monpetitgazon.com/championship/" + league + "/calendar/16"
-String_url="https://api.monpetitgazon.com/league/KVR75VUS/mercato"
+String_url="https://api.monpetitgazon.com/league/"+ ligue_data +"/mercato"
 # # print(String_url)
 i=0
 
-token='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im1wZ191c2VyXzI2MTEwNSIsImNoZWNrIjoiYTViMjdkMzI1MTU1YWQxYiIsImlhdCI6MTYwOTI0Njg1NH0.iUbzRI_sfZkpQiXOC0sdrTGDhEC9-CUanFnGlVbEaqk'
+token = player_token
 # # mpg_user='mpg_user_261105'
 # while i<500:
 

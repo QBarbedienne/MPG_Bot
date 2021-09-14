@@ -1,3 +1,4 @@
+from src.init import InitVariables
 import pandas as pd 
 import numpy as np
 import scipy
@@ -7,26 +8,9 @@ import time
 import json
 import os
 
-script_path = os.path.dirname(os.path.realpath(__file__))
+from src.init import *
 
-with open(script_path + '\datas.txt') as f:
-    lines = f.read().splitlines() 
-print(lines)
-
-if len(lines) == 4:
-    ligue_data = lines[1].split('ligue_name : ')[1]
-    player_token = lines[2].split('token : ')[1]
-
-print(ligue_data)
-print(player_token)
-
-league='1'
-# String_url = "https://api.monpetitgazon.com/championship/" + league + "/calendar/16"
-String_url="https://api.monpetitgazon.com/league/"+ ligue_data +"/mercato"
-# # print(String_url)
-i=0
-
-token = player_token
+InitVariables(os.path.dirname(os.path.realpath(__file__)))
 # # mpg_user='mpg_user_261105'
 # while i<500:
 
